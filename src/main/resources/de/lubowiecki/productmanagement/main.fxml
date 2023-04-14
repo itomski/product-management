@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.lubowiecki.productmanagement.MainController">
+  <tabs>
+    <Tab text="Produkte">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="41.0" layoutY="20.0" text="Name:" AnchorPane.leftAnchor="20.0" />
+                  <TextField fx:id="name" layoutX="41.0" layoutY="39.0" AnchorPane.leftAnchor="20.0" />
+                  <Label layoutX="41.0" layoutY="70.0" text="Anzahl:" AnchorPane.leftAnchor="20.0" />
+                  <TextField fx:id="anzahl" layoutX="41.0" layoutY="89.0" AnchorPane.leftAnchor="20.0" />
+                  <Label layoutX="41.0" layoutY="119.0" text="Preis:" AnchorPane.leftAnchor="20.0" />
+                  <TextField fx:id="preis" layoutX="41.0" layoutY="138.0" AnchorPane.leftAnchor="20.0" />
+                  <Label layoutX="201.0" layoutY="20.0" text="Beschreibung:" />
+                  <TextArea fx:id="beschreibung" layoutX="227.0" layoutY="39.0" prefHeight="126.0" prefWidth="380.0" AnchorPane.rightAnchor="20.0" />
+                  <Button layoutX="491.0" layoutY="172.0" mnemonicParsing="false" onAction="#save" text="Speichern" AnchorPane.rightAnchor="20.0" />
+
+                   <TableView fx:id="tblProducts" layoutX="20.0" layoutY="212.0" prefHeight="341.0" prefWidth="560.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                    <columns>
+                        <TableColumn prefWidth="41.0" text="ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id" />
+                            </cellValueFactory>
+                        </TableColumn>
+
+                        <TableColumn prefWidth="374.0" text="NAME">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name" /><!-- bezieht sich auf die Eigenschaft "name" von Product -->
+                            </cellValueFactory>
+                        </TableColumn>
+
+                        <TableColumn prefWidth="78.0" text="ANZAHL">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="quantity" />
+                            </cellValueFactory>
+                        </TableColumn>
+
+                        <TableColumn prefWidth="66.0" text="PREIS">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="priceDE" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                  </TableView>
+               </children>
+        </AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Einstellungen">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
